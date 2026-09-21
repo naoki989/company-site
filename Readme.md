@@ -34,18 +34,25 @@
 ## ファイル構成
 
 ```
-company_site/
+company-site/
 ├── index.html   サイト本体（HTML / CSS / JavaScript）
 └── Readme.md    本ファイル
 ```
 
 ## ブラウザで開く手順
 
-ビルドもサーバーも不要です。次のいずれかの方法で表示できます。
+ビルドもサーバーも不要です。リポジトリを取得したら、次のいずれかの方法で表示できます。
+
+```powershell
+git clone https://github.com/naoki989/company-site.git
+cd company-site
+```
+
+以降のコマンドは、いずれもリポジトリのルートディレクトリ（`index.html` があるフォルダ）で実行してください。
 
 ### 方法1: ファイルをダブルクリックする（最も簡単）
 
-1. エクスプローラーで `company_site` フォルダを開きます。
+1. エクスプローラーでリポジトリのフォルダを開きます。
 2. `index.html` をダブルクリックします。
 3. 既定のブラウザでサイトが表示されます。
 
@@ -54,15 +61,14 @@ company_site/
 ### 方法2: PowerShell から開く
 
 ```powershell
-cd "C:\Users\naoki\OneDrive\デスクトップ\company_site"
-Start-Process index.html
+Start-Process .\index.html
 ```
 
 ブラウザを指定して開く場合:
 
 ```powershell
-Start-Process msedge index.html    # Microsoft Edge
-Start-Process chrome index.html    # Google Chrome
+Start-Process msedge .\index.html    # Microsoft Edge
+Start-Process chrome .\index.html    # Google Chrome
 ```
 
 ### 方法3: ローカルサーバーを起動する
@@ -70,7 +76,6 @@ Start-Process chrome index.html    # Google Chrome
 `file://` ではなく `http://` で確認したい場合（キャッシュ挙動の確認など）は、簡易サーバーを使います。
 
 ```powershell
-cd "C:\Users\naoki\OneDrive\デスクトップ\company_site"
 python -m http.server 8000
 ```
 
